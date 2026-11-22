@@ -152,7 +152,8 @@ try {
       assert.equal(report.submissions.at(-1).startup.route, route)
       assert.equal(report.submissions.at(-1).consentMarketing, false)
       assert.equal(report.submissions.at(-1).consentPdn, true)
-      assert.match(await page.locator('.startup-result').innerText(), /не подключены|ещё не подтверждено/)
+      const reviewNotice = route === 'organization' ? /ещё не подтверждено/ : /Если заявку одобрим, согласуем с вами специальные условия/
+      assert.match(await page.locator('.startup-result').innerText(), reviewNotice)
       await shot(`success-${route}`, page.locator('.startup-application'))
     }
   })

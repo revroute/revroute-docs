@@ -13,7 +13,7 @@ export type StartupRoute = keyof typeof STARTUP_ROUTES
 export const STARTUP_OPTIONS = {
   age: { under1: 'Меньше года', '1to2': '1–2 года', '3to4': '3–4 года', '5plus': '5 лет и больше' },
   team: { solo: 'Только основатель', '2to9': '2–9 человек', '10to29': '10–29 человек', '30plus': '30 человек и больше' },
-  readiness: { month: 'В ближайшие 30 дней', later: 'Позже', help: 'Помогите с оценкой' },
+  readiness: { month: 'В ближайшие 30 дней', later: 'Позже', help: 'Хочу обсудить сроки' },
   eligibility: {
     yes: 'Да, всем условиям',
     discuss: 'Есть исключение',

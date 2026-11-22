@@ -163,7 +163,7 @@ export function StartupApplication() {
       <h4 className="rr-h3">Заявка отправлена</h4>
       <p className="rr-body">{route === 'organization'
         ? 'Свяжемся с вами по электронной почте, чтобы обсудить участников и формат сотрудничества. Участие организации в программе ещё не подтверждено.'
-        : 'Свяжемся с вами по электронной почте, проверим данные и обсудим следующий шаг. Специальные условия пока не согласованы и не подключены.'}</p>
+        : 'Проверим данные и напишем вам по электронной почте. Если заявку одобрим, согласуем с вами специальные условия.'}</p>
       <Button variant="ghost" onClick={() => { setStatus('idle'); started.current = false }}>Подать ещё одну заявку</Button>
     </div> : <form onSubmit={onSubmit} onFocusCapture={onFirstTouch} onInputCapture={(event) => {
       onFirstTouch()
@@ -206,7 +206,7 @@ export function StartupApplication() {
           </div>
           <SelectField name="eligibility" label="Соответствует ли компания условиям?" options={STARTUP_OPTIONS.eligibility}
             hint="Выручка за последние 12 месяцев — не более 100 млн ₽. Раньше не пользовались платными тарифами RevRoute и не получали специальные условия для стартапов. Бесплатный аккаунт подходит." />
-          <SelectField name="readiness" label="Когда готовы начать внедрение?" options={STARTUP_OPTIONS.readiness} />
+          <SelectField name="readiness" label="Когда вы готовы начать работу над партнёрской программой?" options={STARTUP_OPTIONS.readiness} />
           <Field name="launchPlan" label="План запуска" hint="Кто мог бы рекомендовать продукт? За что будете платить партнёрам? Где учитываете заявки или сделки? Контакты партнёров не нужны.">
             <textarea className="rr-input" id="startup-launchPlan" name="launchPlan" required maxLength={450} aria-describedby="startup-launchPlan-hint" />
           </Field>
