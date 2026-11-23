@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import { Button, Eyebrow, Icon } from '@/components/ds/primitives'
 import { FaqList } from '@/components/ds/FaqList'
+import { CustomerBrands } from '@/components/ds/CustomerBrands'
 import { StartupApplication } from '@/components/ds/StartupApplication'
 import { JsonLd } from '@/components/marketing/seo/JsonLd'
 import { breadcrumbs, faqPage } from '@/lib/seo/schemas'
@@ -88,7 +89,7 @@ export default function StartupsPage() {
     </section>
 
     <nav className="ds-container startup-section-nav" aria-label="На этой странице">
-      <a href="#offers">Условия</a><a href="#eligibility">Кому подходит</a><a href="#launch">Как участвовать</a><a href="#organizations">Организациям</a><a href="#faq">Вопросы</a>
+      <a href="#offers">Условия</a><a href="#eligibility">Кому подходит</a><a href="#launch">Как участвовать</a><a href="#organizations">Организациям</a><a href="#customers">Клиенты</a><a href="#faq">Вопросы</a>
     </nav>
 
     <section id="offers" className="ds-band ds-container" aria-labelledby="offers-title">
@@ -158,6 +159,13 @@ export default function StartupsPage() {
       <div className="startup-organizations">
         <div><Eyebrow>Акселераторам, фондам и сообществам</Eyebrow><h2 id="organizations-title" className="rr-h2">Помогите стартапам<br />запустить партнёрские продажи.</h2><p className="rr-lead">Вы рекомендуете компании и подтверждаете их участие в программе. RevRoute проверяет готовность к запуску и согласует условия.</p><Button href="#organization-application" iconRight="arrow-right">Обсудить сотрудничество</Button></div>
         <div className="startup-organization-formats"><div><Icon name="users" /><h3 className="rr-h3">Условия для участников</h3><p className="rr-small">Стартапы, которые пройдут отбор, получат три месяца без абонентской платы и материалы. На одной встрече для всей группы разберём, как запустить партнёрскую программу. Встреча займёт до 60 минут.</p></div><div><Icon name="star" /><h3 className="rr-h3">Особые условия</h3><p className="rr-small">Вы рекомендуете победителей и отобранные компании. Мы проверим заявки и согласуем особые условия до объявления награды.</p></div></div>
+      </div>
+    </section>
+
+    <section id="customers" className="startup-help-band" aria-labelledby="customer-brands-title">
+      <div className="ds-band ds-container">
+        <div className="startup-section-head"><Eyebrow>Платформа RevRoute</Eyebrow><h2 id="customer-brands-title" className="rr-h2">Наши клиенты</h2></div>
+        <CustomerBrands />
       </div>
     </section>
 

@@ -2,7 +2,7 @@
  * STARTUPS_BASE=http://127.0.0.1:3100 node scripts/check-startups.mjs
  */
 import assert from 'node:assert/strict'
-import { mkdir, writeFile } from 'node:fs/promises'
+import { mkdir, readFile, writeFile } from 'node:fs/promises'
 import path from 'node:path'
 import { chromium } from 'playwright'
 
@@ -102,9 +102,17 @@ try {
     assert.equal(sitemap.status(), 200)
     assert.ok((await sitemap.text()).includes('<loc>https://revroute.ru/startups</loc>'))
     const hrefs = await page.locator('a[href]').evaluateAll((links) => [...new Set(links.map((link) => link.getAttribute('href')))])
+    const customers = JSON.parse(await readFile(new URL('../content/home-customers.json', import.meta.url), 'utf8'))
+    const brandLinks = page.locator('#customers a')
+    assert.deepEqual(await brandLinks.evaluateAll(links => links.map(link => link.getAttribute('href'))), customers.map(({ slug }) => `/go/${slug}`))
+    for (const { slug, site } of customers) {
+      const redirect = await context.request.get(`${base}/go/${slug}`, { maxRedirects: 0 })
+      assert.equal(redirect.status(), 307, slug)
+      assert.equal(redirect.headers().location, site, slug)
+    }
     for (const href of hrefs) {
       if (href.startsWith('#')) assert.equal(await page.locator(`[id="${href.slice(1)}"]`).count(), 1, href)
-      else if (href.startsWith('/')) assert.equal((await context.request.get(`${base}${href}`)).status(), 200, href)
+      else if (href.startsWith('/') && !href.startsWith('/go/')) assert.equal((await context.request.get(`${base}${href}`)).status(), 200, href)
     }
   })
 
