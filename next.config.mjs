@@ -20,6 +20,9 @@ const withNextra = nextra({
 const legacyRedirects = JSON.parse(
   readFileSync(new URL('./redirects.json', import.meta.url), 'utf8'),
 )
+const homeCustomers = JSON.parse(
+  readFileSync(new URL('./content/home-customers.json', import.meta.url), 'utf8'),
+)
 
 const nextConfig = {
   output: 'standalone',
@@ -32,6 +35,11 @@ const nextConfig = {
   },
   async redirects() {
     return [
+      ...homeCustomers.map(({ slug, site }) => ({
+        source: `/go/${slug}`,
+        destination: site,
+        permanent: false,
+      })),
       // Легаси-URL без префикса локали разворачиваем в плоские правила и ставим
       // ВЫШЕ общих /help/:path*, иначе получается два хопа:
       // /help/article/X → (308) /ru/help/article/X → (301, middleware) /ru/help/<новый путь>.

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { HeroPicker } from '@/components/ds/HeroPicker'
+import { CustomerBrands } from '@/components/ds/CustomerBrands'
 import { CtaBottom } from '@/components/ds/CtaBottom'
 import { VideoEmbed, GLABIX_DEMO_SRC } from '@/components/ds/VideoEmbed'
 import { BrowserFrame } from '@/components/ds/Hero'
@@ -103,6 +104,8 @@ export default function HomePage() {
         ]}
         railCta={{ label: 'Я партнёр', sub: 'офферы и условия', href: '/partners' }}
       />
+
+      <CustomerBrands />
 
       {/* ── 2. Вендору: демо-видео + 6 возможностей (паттерн ClickBank Sellers).
              Медиа здесь ОДНА, в отличие от секции партнёра ниже: там дубль блока

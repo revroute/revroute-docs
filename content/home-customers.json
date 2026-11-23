@@ -1,0 +1,10 @@
+[
+  { "slug": "grand-school", "name": "Grand School", "site": "https://grandschool.net/", "logo": "grand-school.svg", "category": "Профессиональное образование" },
+  { "slug": "marquiz", "name": "Марквиз", "site": "https://marquiz.ru/", "logo": "marquiz.svg", "category": "Квизы для лидогенерации" },
+  { "slug": "konsol", "name": "Консоль.Про", "site": "https://konsol.pro/", "logo": "konsol-pro.svg", "category": "Работа с внештатными исполнителями" },
+  { "slug": "checkroi", "name": "Checkroi", "site": "https://checkroi.ru/", "logo": "checkroi.svg", "category": "Подбор онлайн-курсов" },
+  { "slug": "sitepatrol", "name": "SitePatrol", "site": "https://sitepatrol.ru/", "logo": "sitepatrol.webp", "symbol": true, "category": "Защита и мониторинг сайтов" },
+  { "slug": "skatoolka", "name": "Шкатулка", "site": "https://skatoolka.ru/", "logo": "skatoolka.svg", "category": "ИИ-конструктор сайтов и приложений" },
+  { "slug": "mentorai", "name": "MentorAI", "site": "https://mentor-ai.ru/", "logo": "mentorai.webp", "category": "ИИ для школьного образования" },
+  { "slug": "noteall", "name": "Noteall", "site": "https://noteall.ru/", "logo": "noteall.webp", "category": "Документы по записям встреч" }
+]
