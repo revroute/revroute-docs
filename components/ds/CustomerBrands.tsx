@@ -4,14 +4,10 @@ import './customer-brands.css'
 export function CustomerBrands() {
   return (
     <ul className="customer-brands-list">
-      {customers.map(({ slug, name, logo, category, symbol }) => (
+      {customers.map(({ slug, name, logo }) => (
         <li key={slug}>
           <a href={`/go/${slug}`} aria-label={`Перейти на сайт ${name}`}>
-            <span className="customer-brands-logo">
-              <img src={`/images/customers/${logo}`} alt={symbol ? '' : name} loading="lazy" />
-              {symbol && <span>{name}</span>}
-            </span>
-            <span className="customer-brands-category">{category}</span>
+            <img src={`/images/customers/${logo}`} alt={name} />
           </a>
         </li>
       ))}
