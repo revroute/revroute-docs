@@ -81,10 +81,6 @@ export default function StartupsPage() {
         <div className="startup-visual-benefit"><span><b>50%</b> скидка в первый год</span><span><b>до 6 мес.</b> без абонентской платы</span></div>
         <p className="rr-small"><a href="#offers">Все условия</a></p>
       </div>
-      <section id="customers" className="startup-hero-customers" aria-labelledby="customer-brands-title">
-        <h2 id="customer-brands-title">Вы в хорошей компании</h2>
-        <CustomerBrands />
-      </section>
       <div className="startup-hero-intro">
         <p className="rr-lead">Подписка на специальных условиях и помощь в запуске партнёрской программы.</p>
         <div className="startup-actions rr-cta-row">
@@ -92,6 +88,10 @@ export default function StartupsPage() {
           <Button variant="ghost" size="lg" href="#invitation">У меня приглашение</Button>
         </div>
       </div>
+      <section id="customers" className="startup-hero-customers" aria-labelledby="customer-brands-title">
+        <h2 id="customer-brands-title">Вы в хорошей компании</h2>
+        <CustomerBrands />
+      </section>
     </section>
 
     <nav className="ds-container startup-section-nav" aria-label="На этой странице">

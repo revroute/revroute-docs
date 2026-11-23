@@ -83,7 +83,7 @@
   .startup-organizations { gap: 36px; }
 }
 @media (max-width: 800px) {
-  .startup-hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "title" "offer" "customers" "intro"; padding-top: 24px; padding-bottom: 36px; gap: 22px; }
+  .startup-hero { grid-template-columns: minmax(0, 1fr); grid-template-areas: "title" "offer" "intro" "customers"; padding-top: 24px; padding-bottom: 36px; gap: 22px; }
   .startup-hero-customers { max-width: 540px; }
   .startup-hero-customers h2 { margin-bottom: 4px; }
   .startup-hero .rr-display { max-width: 640px; }
